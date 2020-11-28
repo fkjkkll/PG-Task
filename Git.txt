@@ -1,0 +1,20 @@
+initialize the repository in current root
+$ git init
+
+pull remote host A's branch: master，and let it be merged with local host branch1
+$ git pull A master:branch1
+
+if remote host branch is being merged with current branch，the parts behind colon can be omitted。
+$ git pull A master
+
+If occur the problem -> fatal: refusing to merge unrelated histories, use below instruction
+$ git pull A master --allow-unrelated-histories
+
+$ git status
+
+$ git add 
+
+$ git commit -m 'information'
+
+$ git remote
+
