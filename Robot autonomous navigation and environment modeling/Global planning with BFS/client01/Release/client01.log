@@ -1,0 +1,7 @@
+﻿  client.cpp
+c:\users\lzq\desktop\机器人\client01\client.cpp(115): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  d:\windows kits\10\include\10.0.17763.0\um\winsock2.h(1831): note: see declaration of 'inet_addr'
+  Generating code
+  All 187 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  client01.vcxproj -> C:\Users\lzq\Desktop\机器人\Release\client01.exe
