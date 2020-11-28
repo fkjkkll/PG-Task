@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# Other
+*.db
+*.suo
+*.ipch
+*.config
+*.pbd
+*.ilk
