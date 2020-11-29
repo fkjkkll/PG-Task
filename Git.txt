@@ -1,20 +1,35 @@
-initialize the repository in current root
-$ git init
+Initialize the repository in current root
+    $ git init
 
-pull remote host A's branch: master，and let it be merged with local host branch1
-$ git pull A master:branch1
+Pull remote host A's branch: master，and let it be merged with local host branch1
+    $ git pull A master:branch1
 
-if remote host branch is being merged with current branch，the parts behind colon can be omitted。
-$ git pull A master
+If remote host branch is being merged with current branch，the parts behind colon can be omitted。
+    $ git pull A master
 
 If occur the problem -> fatal: refusing to merge unrelated histories, use below instruction
-$ git pull A master --allow-unrelated-histories
+    $ git pull A master --allow-unrelated-histories
 
-$ git status
+    $ git status
 
-$ git add 
+    $ git add 
 
-$ git commit -m 'information'
+    $ git commit -m 'information'
 
-$ git remote
+    $ git remote
 
+If you want to pull just a part of the project:
+    $ mkdir druid
+    $ cd druid  
+    $ git init
+set the address of remote repository (-f means force)
+    $ git remote add -f origin https://github.com/alibaba/druid.git
+set Sparse Checkout Mode enable
+    $ git config core.sparsecheckout true
+echo 'the directory you want to pull', the right-hand instructions '>>......' are fixed
+    $ echo "doc/user/demo" >> .git/info/sparse-checkout
+pull the part of the repository
+    $ git pull origin master
+If your want to add a new directory, just add a setting of sparse-checkout, then checkout master
+    $ echo another_folder >> .git/info/sparse-checkout
+    $ git checkout master
