@@ -33,3 +33,6 @@ pull the part of the repository
 If your want to add a new directory, just add a setting of sparse-checkout, then checkout master
     $ echo another_folder >> .git/info/sparse-checkout
     $ git checkout master
+
+Git Update remote repository to local host
+https://www.cnblogs.com/H-xiaofeng/p/13396224.html
