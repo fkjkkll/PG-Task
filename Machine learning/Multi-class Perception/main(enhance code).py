@@ -55,9 +55,12 @@ iteration = 1000
 lr = 0.2
 
 for i in range(iteration):
-    y_hat = softmax(np.dot(theta.T, train_x) + b)
-    error = y_hat.T
+    y_hat = np.dot(theta.T, train_x) + b
+    
+    error = np.zeros_like(y_hat.T)
+    max_index = np.argmax(y_hat, 0)
     error[np.arange(train_x.shape[-1]), train_y.astype(int)] -= 1
+    error[np.arange(train_x.shape[-1]), max_index.astype(int)] += 1
 
     d_theta = np.dot(train_x, error)
     d_b = np.sum(error, 0).reshape(-1, 1)
@@ -66,7 +69,8 @@ for i in range(iteration):
 
     if i % (iteration // 20) == 0:
         plt.cla()
-        r_data = softmax(np.dot(theta.T, xt) + b)
+        r_data = np.dot(theta.T, xt) + b
+
         t_data = np.argmax(r_data, axis=0)
         mask0 = [i for i in range(len(t_data)) if t_data[i] == 0]
         mask1 = [i for i in range(len(t_data)) if t_data[i] == 1]
@@ -91,3 +95,6 @@ for i in range(iteration):
     pass
 
 print(theta)
+
+
+
