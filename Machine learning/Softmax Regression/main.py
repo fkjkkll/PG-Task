@@ -56,7 +56,7 @@ xt = np.array([x0, x1, x2])
 xt[1:] = xt[1:]
 
 # ============ train =============
-iteration = 1000
+iteration = 10000
 lr = 1e-2
 
 for i in range(iteration):
@@ -86,7 +86,7 @@ for i in range(iteration):
         plt.pause(0.1)
         pass
 
-        # 底下以=0为边界去画则会过于限制边界位置，过于hard，失去soft，应该用上面的方式，抉择出3个中的最大值
+        # # 底下以=0为边界去画则会过于限制边界位置，过于hard，失去soft，应该用上面的方式，抉择出3个中的最大值
         # plt.cla()
         # plt.scatter(train_x[1, :40], train_x[2, :40], color='blue')
         # plt.scatter(train_x[1, 40:80], train_x[2, 40:80], color='red')
